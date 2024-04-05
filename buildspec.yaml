@@ -25,6 +25,6 @@ phases:
       - echo Check the Running Containers
       - docker ps
       - echo Test The Docker Services
-      - curl -kiv http://127.0.0.1:5000/incomes
+      - curl -kiv http://localhost:5000/incomes
 
 
