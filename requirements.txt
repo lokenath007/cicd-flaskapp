@@ -2,3 +2,4 @@ Flask==2.2.5
 Flask-RESTful==0.3.10
 jsonify==0.5
 requests==2.27.1
+gunicorn==21.2.0
