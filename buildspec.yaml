@@ -20,11 +20,13 @@ phases:
   post_build:
     commands:
       - docker images
+      - docker tag flask_image:latest 767397898761.dkr.ecr.us-west-2.amazonaws.com/demoflaskapp:latest
+      - docker push 767397898761.dkr.ecr.us-west-2.amazonaws.com/demoflaskapp:latest
       - echo Run the Image
       - docker run  -d -p 5000:5000 flask_image:latest
       - echo Check the Running Containers
       - docker ps
       - echo Test The Docker Services
-      - curl -kiv http://localhost:5000/incomes
+
 
 
