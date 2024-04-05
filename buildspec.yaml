@@ -28,8 +28,7 @@ phases:
       - echo Check the Running Containers
       - docker ps
       - echo Test The Docker Services
-
-  artifacts:
+artifacts:
     files:
       - '**/*'
 
