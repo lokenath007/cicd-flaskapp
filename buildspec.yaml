@@ -29,5 +29,9 @@ phases:
       - docker ps
       - echo Test The Docker Services
 
+  artifacts:
+    files:
+      - '**/*'
+
 
 
