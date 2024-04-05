@@ -1,0 +1,28 @@
+# Buildspec Reference Doc: https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html
+
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "installing Pip packages"
+
+  pre_build:
+    commands:
+      - pip install flask
+      - pip install jsonify
+      - pip install requests
+
+  build:
+    commands:
+      - flask --app hello run
+  post_build:
+    commands:
+      - echo "curl http://localhost:5000/incomes"
+      - curl http://localhost:5000/incomes
+
+
+
+cache:
+  paths:
+    - '/root/.cache/pip'
