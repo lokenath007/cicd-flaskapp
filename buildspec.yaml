@@ -20,6 +20,7 @@ phases:
   post_build:
     commands:
       - docker images
+      - aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 767397898761.dkr.ecr.us-west-2.amazonaws.com
       - docker tag flask_image:latest 767397898761.dkr.ecr.us-west-2.amazonaws.com/demoflaskapp:latest
       - docker push 767397898761.dkr.ecr.us-west-2.amazonaws.com/demoflaskapp:latest
       - echo Run the Image
