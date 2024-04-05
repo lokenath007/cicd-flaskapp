@@ -9,20 +9,14 @@ phases:
 
   pre_build:
     commands:
-      - pip install flask
-      - pip install jsonify
-      - pip install requests
+      - echo "Creating Docker Image"
+
 
   build:
     commands:
-      - flask --app hello run
-  post_build:
-    commands:
-      - echo "curl http://localhost:5000/incomes"
-      - curl http://localhost:5000/incomes
+      - docker build -t flask_image .
+      - echo Image built successfully
+
+    
 
 
-
-cache:
-  paths:
-    - '/root/.cache/pip'
