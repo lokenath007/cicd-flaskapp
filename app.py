@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request,render_template
 
 app = Flask(__name__)
 incomes = [
-    { 'description': 'salary', 'amount': 5000 }
+    { 'description': 'salary', 'amount': 50000 }
 ]
 
 
